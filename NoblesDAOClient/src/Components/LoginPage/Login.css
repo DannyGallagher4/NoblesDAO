@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  background-color: #f4f4f4;
+  height: 100%;
+}
+
+.login-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 100px auto 20px; /* Added top margin to account for the banner */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #004990;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.capsule-button {
+  background-color: #004990;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.capsule-button:hover {
+  background-color: #0059b3;
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+.create-account-text {
+  color: #003366;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.create-account-text span {
+  text-decoration: underline;
+}

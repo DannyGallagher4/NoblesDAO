@@ -1,0 +1,34 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: chrisdotn/truffle-docker:0.0.4
+      - image: trufflesuite/ganache-cli
+        command: ganache-cli -m 'scene kite dust inherit sample upset person below fancy drive mean place'
+
+    working_directory: ~/repo
+
+    environment:
+      TEST_REPORTS: /tmp/test-reports
+
+    steps:
+      - checkout
+
+      # run tests!
+      - run:
+          command: |
+            sed -i -e "s/reporter: 'spec'/reporter: 'mocha-junit-reporter'/g" truffle.js
+            mkdir -p ${TEST_REPORTS}
+            truffle test
+            cp test-results.xml ${TEST_REPORTS}
+
+      - store_artifacts:
+          path: test-results.xml
+
+      - store_test_results:
+          path: /tmp/test-reports

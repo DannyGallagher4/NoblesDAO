@@ -1,0 +1,7 @@
+/secrets/
+.env
+.env.*
+!.env.example
+*service-account*.json
+*firebase-adminsdk*.json
+api_key.txt
